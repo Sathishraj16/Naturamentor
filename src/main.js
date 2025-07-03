@@ -4,8 +4,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.css';
 import { createSpaceship } from './spaceships.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 let stars; // ⭐ global star mesh
 let mouseX = 0, mouseY = 0; // 🖱️ for mouse movement rotation
@@ -90,6 +92,14 @@ setupHeroScene() {
             spaceship = gltf.scene;
             spaceship.scale.set(0.5, 0.5, 0.5);
             spaceship.position.set(0, 0, 0);
+             spaceship.traverse((child) => {
+            if (child.isMesh && child.material) {
+                child.material.emissive?.set('#4a2519');
+                child.material.emissiveIntensity = 0.3;
+                child.material.metalness = 0.6;
+                child.material.roughness = 0.4;
+            }
+        });
             scene.add(spaceship);
         },
         undefined,
@@ -292,6 +302,28 @@ setupHeroScene() {
             end: 99999,
             toggleClass: { className: 'nav-scrolled', targets: '.nav' }
         });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+    // Remove active from all
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            // Add active to current
+            link.classList.add('active');
+
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+            gsap.to(window, {
+                duration: 0.6,
+                scrollTo: { y: targetElement, offsetY: 90 },
+                ease: 'power2.out'
+            });
+            }
+        });
+        });     
     }
 
     setupFileUpload() {

@@ -13,6 +13,11 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
     /* Star Wars Orange/White Theme */
     --bg-primary: #fefefe;
@@ -69,6 +74,26 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
 }
+
+.nav-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-svg{
+    fill: #666666;
+}
+
+.nav-link.active {
+  color: var(--rebel-orange); /* Or any standout color */
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  width: 100%; /* underline if you're using ::after */
+}
+
 
 .section-title {
     font-size: 3rem;
@@ -128,6 +153,8 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 2px;
+    display: flex;
+    align-items: center;
 }
 
 .logo-subtitle {
