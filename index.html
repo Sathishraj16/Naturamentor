@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NaturaMentor: Star Wars Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Star Jedi';
+            src: url('data:font/woff2;base64,') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-text">NATURAMENTOR</span>
+                    <span class="logo-subtitle"><span class="starwars-font-1">STAR WARS</span> EDITION</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">HOME</a>
+                    <a href="#fleet" class="nav-link">FLEET</a>
+                    <a href="#modules" class="nav-link">MODULES</a>
+                    <a href="#mission" class="nav-link">MISSION</a>
+                </div>
+                <button class="nav-cta">JOIN REBELLION</button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <canvas id="hero-canvas" data-ship-type="nova-cruiser"></canvas>
+          
+
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title ">
+                        <span class="title-main">NATURAMENTOR</span>
+                        <span class="title-sub"><span class="starwars-font"> STAR WARS </span>EDITION</span>
+                    </h1>
+                    <p class="hero-tagline">"The Force Awakens in Your Data"</p>
+                    <p class="hero-description">
+                        Join the Rebellion against ignorance. Our bio-intelligent AI fleet analyzes your documents 
+                        with the power of the Force, delivering insights that would make even Master Yoda proud.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <span>AWAKEN THE FORCE</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button class="btn btn-secondary">VIEW FLEET</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">AI MODULES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">POSSIBILITIES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">FORCE POWER</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Section -->
+        <section id="fleet" class="fleet">
+            <div class="container">
+                <h2 class="section-title">THE REBEL FLEET</h2>
+                <p class="section-subtitle">Advanced starships powered by bio-intelligent AI</p>
+                
+                <div class="fleet-grid">
+                    <div class="ship-card" data-ship="x-wing">
+                        <div class="ship-3d">
+                            <canvas class="ship-canvas" data-ship-type="x-wing"></canvas>
+                        </div>
+                        <div class="ship-info">
+                            <h3 class="ship-name">X-WING FIGHTER</h3>
+                            <p class="ship-description">Fast reconnaissance and data analysis</p>
+                            <div class="ship-stats">
+                                <span class="stat">Speed: ★★★★★</span>
+                                <span class="stat">Power: ★★★☆☆</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ship-card" data-ship="millennium-falcon">
+                        <div class="ship-3d">
+                            <canvas class="ship-canvas" data-ship-type="millennium-falcon"></canvas>
+                        </div>
+                        <div class="ship-info">
+                            <h3 class="ship-name">MILLENNIUM FALCON</h3>
+                            <p class="ship-description">Heavy-duty document processing</p>
+                            <div class="ship-stats">
+                                <span class="stat">Speed: ★★★☆☆</span>
+                                <span class="stat">Power: ★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ship-card" data-ship="star-destroyer">
+                        <div class="ship-3d">
+                            <canvas class="ship-canvas" data-ship-type="star-destroyer"></canvas>
+                        </div>
+                        <div class="ship-info">
+                            <h3 class="ship-name">STAR DESTROYER</h3>
+                            <p class="ship-description">Massive data analysis capabilities</p>
+                            <div class="ship-stats">
+                                <span class="stat">Speed: ★★☆☆☆</span>
+                                <span class="stat">Power: ★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules Section -->
+        <section id="modules" class="modules">
+            <div class="container">
+                <h2 class="section-title">BIO-INTELLIGENT MODULES</h2>
+                <p class="section-subtitle">The Force flows through these specialized AI systems</p>
+                
+                <div class="modules-grid">
+                    <div class="module-card" data-module="memory">
+                        <div class="module-icon">🐘</div>
+                        <h3 class="module-name">MEMORYNET</h3>
+                        <p class="module-description">Long-term memory with FAISS-based retrieval system</p>
+                        <div class="module-force-level">
+                            <span class="force-label">FORCE LEVEL:</span>
+                            <div class="force-bar">
+                                <div class="force-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card" data-module="logic">
+                        <div class="module-icon">🐜</div>
+                        <h3 class="module-name">LOGICNET</h3>
+                        <p class="module-description">Factual reasoning powered by MiniLM and DistilBERT</p>
+                        <div class="module-force-level">
+                            <span class="force-label">FORCE LEVEL:</span>
+                            <div class="force-bar">
+                                <div class="force-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card" data-module="creative">
+                        <div class="module-icon">🐙</div>
+                        <h3 class="module-name">CREATIVENET</h3>
+                        <p class="module-description">Analogy generation using GPT-2 and LSTM networks</p>
+                        <div class="module-force-level">
+                            <span class="force-label">FORCE LEVEL:</span>
+                            <div class="force-bar">
+                                <div class="force-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card" data-module="emotion">
+                        <div class="module-icon">🐬</div>
+                        <h3 class="module-name">EMONET</h3>
+                        <p class="module-description">Emotion-aware rephrasing for human connection</p>
+                        <div class="module-force-level">
+                            <span class="force-label">FORCE LEVEL:</span>
+                            <div class="force-bar">
+                                <div class="force-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card" data-module="router">
+                        <div class="module-icon">🍄</div>
+                        <h3 class="module-name">ROOTROUTER</h3>
+                        <p class="module-description">Mycelium-inspired intelligent query routing</p>
+                        <div class="module-force-level">
+                            <span class="force-label">FORCE LEVEL:</span>
+                            <div class="force-bar">
+                                <div class="force-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="mission">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2 class="section-title">JOIN THE MISSION</h2>
+                        <p class="mission-description">
+                            The galaxy needs heroes who can harness the power of data. Upload your documents 
+                            and let our AI fleet analyze them with the wisdom of the Jedi and the efficiency 
+                            of the Rebellion.
+                        </p>
+                        <div class="mission-features">
+                            <div class="feature">
+                                <span class="feature-icon">⚡</span>
+                                <span>Lightning-fast processing</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🛡️</span>
+                                <span>Secure data handling</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🎯</span>
+                                <span>Precise insights</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="upload-area">
+                        <div class="upload-zone">
+                            <div class="upload-icon">📄</div>
+                            <p class="upload-text">Drop your documents here</p>
+                            <p class="upload-subtext">PDF, DOC, TXT files supported</p>
+                            <input type="file" id="file-upload" multiple accept=".pdf,.doc,.docx,.txt">
+                            <button class="upload-btn">CHOOSE FILES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <span class="logo-text">NATURAMENTOR</span>
+                        <span class="logo-subtitle">STAR WARS EDITION</span>
+                    </div>
+                    <p class="footer-text">"May the Force be with your data"</p>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
