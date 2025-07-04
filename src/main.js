@@ -5,6 +5,8 @@ import './style.css';
 import { createSpaceship } from './spaceships.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { createBB8 } from './bb8Easteregg.js';
+
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -417,4 +419,23 @@ setupHeroScene() {
 
 document.addEventListener('DOMContentLoaded', () => {
     new StarWarsApp();
+});
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('preloader');
+  if (loader) {
+    loader.classList.add('hidden');
+    setTimeout(() => loader.remove(), 500);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.visibility = 'visible';
+});
+
+
+
+document.querySelector('.btn-primary').addEventListener('click', () => {
+    const canvas = document.getElementById('bb8-easteregg');
+    if (canvas) createBB8(canvas);
 });

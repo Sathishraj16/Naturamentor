@@ -159,7 +159,6 @@ function createMillenniumFalcon() {
     engine2.position.set(-0.8, -0.4, -0.2);
     engine2.castShadow = true;
     group.add(engine2);
-
     return group;
 }
 
