@@ -117,6 +117,8 @@ function createXWing() {
         engine.castShadow = true;
         group.add(engine);
     });
+    
+    group.scale.set(1.8, 1.2 ,1.2);
 
     return group;
 }
@@ -159,6 +161,7 @@ function createMillenniumFalcon() {
     engine2.position.set(-0.8, -0.4, -0.2);
     engine2.castShadow = true;
     group.add(engine2);
+    group.scale.set(1.8, 2,1.2);
     return group;
 }
 
@@ -193,6 +196,7 @@ function createStarDestroyer() {
         detail.castShadow = true;
         group.add(detail);
     }
+    group.scale.set(1.4, 1.4,1.2);
 
     return group;
 }

@@ -46,6 +46,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    cursor: url('/images/yoda.png') 10 10, auto;
 }
 
 .starwars-font {
@@ -131,13 +132,13 @@ body {
   overflow: hidden;
   border-right: 2px solid #fff;
   width: 0;
-  animation: typing 3s steps(35, end) forwards, blink 0.75s step-end infinite;
-  color: #fff;
+  animation: typing 1.5s steps(35, end) forwards, blink 0.75s step-end infinite;
+  color: #bb5b1c;
 }
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 42% }
 }
 
 @keyframes blink {
@@ -478,6 +479,7 @@ flex-direction: column;
     background: transparent;
     color: var(--rebel-orange);
     border: 2px solid var(--rebel-orange);
+    text-decoration: none;
 }
 
 .btn-secondary:hover {
@@ -515,18 +517,23 @@ flex-direction: column;
 }
 
 .ship-card {
-    background: var(--card-bg);
-    border-radius: 25px;
-    overflow: hidden;
-    border: 1px solid var(--card-border);
-    transition: all 0.4s ease;
-    backdrop-filter: blur(20px);
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(20px);
+  transform: scale(1);
+  will-change: transform;
 }
 
 .ship-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px var(--shadow-orange);
+  transform: scale(2.05); /* Zooms the card */
+  box-shadow: 0 20px 50px var(--shadow-orange);
+  z-index: 2;
 }
+
 
 .ship-3d {
     height: 250px;
@@ -571,7 +578,7 @@ flex-direction: column;
 
 /* Modules Section */
 .modules {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background: var(--bg-primary);
     position: relative;
 }
@@ -962,3 +969,57 @@ html {
         width: var(--target-width);
     }
 }
+
+.baby-yoda-canvas-wrapper {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
+  width: 160px;
+  height: 160px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.baby-yoda-canvas-wrapper canvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+.fleet {
+  position: relative;
+  background: linear-gradient(to bottom right, #fff8f0, #ffe0c1, #ffd4a3);
+  overflow: hidden;
+  z-index: 1;
+  color: #1a1a1a;
+}
+
+.fleet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255,107,53,0.3) 0%, rgba(255,255,255,0) 80%),
+              url('/images/stardust.png') repeat;
+  background-size: cover;
+  opacity: 0.2;
+  animation: orangeStarDrift 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes orangeStarDrift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-500px, -500px);
+  }
+}
+
+.fleet .container {
+  position: relative;
+  z-index: 2;
+}
+

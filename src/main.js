@@ -5,13 +5,14 @@ import './style.css';
 import { createSpaceship } from './spaceships.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { createBB8 } from './bb8Easteregg.js';
+import { toggleBB8 } from './bb8Easteregg.js';
+import { initBabyYoda } from './babyYoda.js';
 
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-let stars; // ⭐ global star mesh
+let stars; // ⭐ global star meshx`
 let mouseX = 0, mouseY = 0; // 🖱️ for mouse movement rotation
 
 // 🌌 Star generator
@@ -434,8 +435,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const yodaCanvas = document.getElementById('babyYodaCanvas');
+initBabyYoda(yodaCanvas);
 
-document.querySelector('.btn-primary').addEventListener('click', () => {
-    const canvas = document.getElementById('bb8-easteregg');
-    if (canvas) createBB8(canvas);
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.querySelector('.btn-primary');
+  const bb8Canvas = document.getElementById('bb8-easteregg');
+
+  if (toggleButton && bb8Canvas) {
+    toggleButton.addEventListener('click', () => {
+      toggleBB8(bb8Canvas);
+    });
+  }
 });
