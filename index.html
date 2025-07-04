@@ -44,7 +44,10 @@
                     </span>
                     <span class="logo-subtitle"><span class="starwars-font-1">STAR WARS</span> EDITION</span>
                 </div>
-                <div class="nav-links">
+                    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    ☰
+                    </button>
+                <div class="nav-links" id="nav-links">
                     <a href="#home" class="nav-link">HOME</a>
                     <a href="#fleet" class="nav-link">FLEET</a>
                     <a href="#modules" class="nav-link">MODULES</a>
@@ -300,5 +303,13 @@
 
 
     <script type="module" src="/src/main.js"></script>
+    <script>
+  const toggleBtn = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
